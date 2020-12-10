@@ -1,4 +1,4 @@
-# disquiet
+# disquiet 
 
 A collection on useful Übersicht widgets
 
@@ -8,8 +8,8 @@ A collection on useful Übersicht widgets
 
 ## Table of Contents
 
-- [Common](#common)
-- [timer.jsx](#timer.jsx)
+- ⚙️ [Common](#common)
+- ⏲ [timer.jsx](#timer.jsx)
 
 ## Common
 
