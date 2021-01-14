@@ -3,7 +3,7 @@ import { styled } from "uebersicht";
 import { Pulse } from "./src/loader.jsx";
 import global from "./lib/global.config.js";
 
-export const command = `cd ${global.repo} && git remote update > /dev/null && git rev-list --count --left-right HEAD...@{upstream} | awk 'BEGIN {ORS = ""; print "["} OFS="," {print $1,$2} END {print "]"}'`;
+export const command = `ping google.com && cd ${global.repo} && git remote update > /dev/null && git rev-list --count --left-right HEAD...@{upstream} | awk 'BEGIN {ORS = ""; print "["} OFS="," {print $1,$2} END {print "]"}'`;
 
 export const className = `
     text-align: right;
@@ -27,6 +27,10 @@ export const refreshFrequency = 60e3 * 60; // ms
 
 export const render = ({ output, error }) => {
   if (error) {
+    const message = error.message ?? "Unknown error";
+    if (message.includes("ping")) {
+      return <div></div>;
+    }
     return (
       <div>
         <ErrorMessage main>ERROR</ErrorMessage>

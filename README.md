@@ -1,9 +1,11 @@
-# ix 
+# ix
 
 A collection on useful Übersicht widgets
 
 ---
+
 > ⚠️ This is beta software, expect many changes
+
 ---
 
 ## Table of Contents

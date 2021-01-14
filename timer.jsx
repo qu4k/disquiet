@@ -15,10 +15,10 @@ const Countdown = styled("td")`
     monospace;
 `;
 
-const Row = styled("tr")(props => ({
+const Row = styled("tr")((props) => ({
   color: props.outdated ? "gray" : "white",
-  opacity: props.outdated ? 0.6 : 1
-}))
+  opacity: props.outdated ? 0.6 : 1,
+}));
 
 export const className = `
     left: 0;    
@@ -33,7 +33,7 @@ export const initialState = config;
 
 function getCountdown(date) {
   const now = new Date();
-  return Math.floor((date - now) / (1000 * 60 * 60 * 24)); // get days
+  return Math.floor((date - now) / (1000 * 60 * 60 * 24)) + 1; // get days
 }
 
 export const render = ({ dates }) => {
@@ -42,7 +42,7 @@ export const render = ({ dates }) => {
       name,
       countdown: getCountdown(date),
     }))
-    .sort(({ countdown: a }, { countdown: b }) => Math.abs(a) - Math.abs(b));
+    .sort(({ countdown: a }, { countdown: b }) => a - b);
   return (
     <Table>
       <tbody>
